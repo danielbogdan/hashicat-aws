@@ -7,13 +7,6 @@ terraform {
   }
 }
 
-resource "aws_instance" { 
-
-  tags = {
-    Name = "${var.prefix}-devops"
-  }
-}
-
 provider "aws" {
   region  = var.region
 }
@@ -135,6 +128,7 @@ resource "aws_instance" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Departments = "devops"
   }
 }
 
