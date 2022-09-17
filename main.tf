@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+resource "aws_instance" { 
+
+  tags = {
+    Name = "${var.prefix}-devops"
+  }
+}
+
 provider "aws" {
   region  = var.region
 }
